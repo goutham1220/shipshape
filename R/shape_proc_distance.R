@@ -3,13 +3,21 @@ library(fdasrvf)
 
 # Procrustes Distance
 
-shape_distance -> function(x, y, dist_type = "elastic"){
+bone_shapes = bone_list$x
 
-}
+bone_shapes = cbind(bone_shapes, bone_list$y)
 
-# procDist
-function (x, y, type = "full", reflect = FALSE)
-{
+bone_1 = bone_shapes[1:100,]
+bone_2 = bone_shapes[101:200,]
+bone_3 = bone_shapes[201:300,]
+
+bones = array(c(bone_1, bone_2, bone_3), dim = c(100, 2, 3))
+
+dists = sapply(x = combinations(3, 2, names(bones))[1], procdist, combinations(3, 2, bones)[2] )
+
+bone_distances = sapply()
+
+shape_proc_distance <- function (x, y, type = "full", reflect = FALSE){
   if (type == "full") {
     out <- sin(riemdist(x, y, reflect = reflect))
   }
@@ -25,10 +33,11 @@ function (x, y, type = "full", reflect = FALSE)
   out
 }
 
+shape_distance(bone_1, bone_2, type= "full")
+
 # riemdist
 
-function (x, y, reflect = FALSE)
-{
+riemdist <- function (x, y, reflect = FALSE){
   if (sum((x - y)^2) == 0) {
     riem <- 0
   }
@@ -74,8 +83,7 @@ function (x, y, reflect = FALSE)
 
 # preshape
 
-function (x)
-{
+preshape = function (x){
   if (is.complex(x)) {
     k <- nrow(as.matrix(x))
     h <- defh(k - 1)
@@ -112,8 +120,7 @@ function (x)
 }
 
 # realtocomplex
-function (x)
-{
+realtocomplex = function (x){
   k <- nrow(x)
   zstar <- x[, 1] + (0+1i) * x[, 2]
   zstar
@@ -121,14 +128,12 @@ function (x)
 
 # Enormalize
 
-function (x)
-{
+Enormalize = function (x){
   return(x/Enorm(x))
 }
 
 # Enorm
-function (X)
-{
+Enorm = function (X){
   if (is.complex(X)) {
     n <- sqrt(Re(c(st(X) %*% X)))
   }
@@ -136,27 +141,4 @@ function (X)
     n <- sqrt(sum(diag(t(X) %*% X)))
   }
   n
-}
-
-######################################
-
-# Elastic Distance
-
-# elastic.distance
-
-function (f1, f2, time, lambda = 0)
-{
-  q1 <- f_to_srvf(f1, time)
-  q2 <- f_to_srvf(f2, time)
-  gam <- optimum.reparam(q1, time, q2, time, lambda)
-  fw <- approx(time, f2, xout = (time[length(time)] - time[1]) *
-                 gam + time[1])$y
-  qw <- f_to_srvf(fw, time)
-  Dy <- sqrt(trapz(time, (q1 - qw)^2))
-  time1 <- seq(0, 1, length.out = length(time))
-  binsize <- mean(diff(time1))
-  psi <- sqrt(gradient(gam, binsize))
-  v <- inv_exp_map(rep(1, length(gam)), psi)
-  Dx <- sqrt(trapz(time1, v^2))
-  return(list(Dy = Dy, Dx = Dx))
 }
