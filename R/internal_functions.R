@@ -1,38 +1,3 @@
-## Adapted from "shapes" package - Ian L. Dryden
-
-shape_proc_distance <- function (x, type = "full", reflect = FALSE){
-
-  distances = vector()
-
-  for(i in 1:dim(x)[3]){
-
-    x_ref = combn(dim(x)[3], 2)[1,i]
-    y_ref = combn(dim(x)[3], 2)[2,i]
-
-    if (type == "full") {
-      distances = c(distances, sin(riemdist(x[,,x_ref], x[,,y_ref], reflect = reflect)))
-    }
-    if (type == "partial") {
-      distances <- c(distances, sqrt(2) * sqrt(abs(1 - cos(riemdist(x[x_ref], x[,,y_ref], reflect = reflect)))))
-    }
-    if (type == "Riemannian") {
-      distances <- c(distances, riemdist(x[x_ref], x[,,y_ref], reflect = reflect))
-    }
-    if (type == "sizeandshape") {
-      distances <- c(distances, ssriemdist(x[,,x_ref], x[,,y_ref], reflect = reflect))
-    }
-
-    names(distances)[i] = paste(x_ref, y_ref, sep = " ")
-  }
-
-  distances
-}
-
-# INTERNAL FUNCTIONS
-# -------------------------------------------
-
-# riemdist
-
 riemdist <- function (x, y, reflect = FALSE){
   if (sum((x - y)^2) == 0) {
     riem <- 0
