@@ -14,7 +14,7 @@ shape_elastic_distance = function(x, mode = "C"){
 
   distance = vector()
 
-  for(i in 1:dim(bones)[3]){
+  for(i in 1:dim(x)[3]){
 
     x_ref = combn(dim(x)[3], 2)[1,i]
     y_ref = combn(dim(x)[3], 2)[2,i]
@@ -22,18 +22,17 @@ shape_elastic_distance = function(x, mode = "C"){
     f1 = x[,,x_ref]
     f2 = x[,,y_ref]
 
-    t(f1)
+    fxn = fdasrvf:::inverse_exp_coord(t(f1), t(f2), mode)
 
-    fxn = fdasrvf:::inverse_exp_coord(t(f1), t(f2), "C")
-
-    distances = c(distances, fxn$dist)
+    distances[i] = fxn$d
 
     names(distances)[i] = paste(x_ref, y_ref, sep = " ")
     }
 
-  return(distances$dist)
+  return(distances)
 }
 
 shape_elastic_distance(bones, mode = "C")
 
+calc_shape_dist(t(bone_1), t(bone_2), mode = "C")
 

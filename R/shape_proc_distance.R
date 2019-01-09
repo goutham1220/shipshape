@@ -10,16 +10,16 @@ shape_proc_distance <- function (x, type = "full", reflect = FALSE){
     y_ref = combn(dim(x)[3], 2)[2,i]
 
     if (type == "full") {
-      distances = c(distances, sin(riemdist(x[,,x_ref], x[,,y_ref], reflect = reflect)))
+      distances[i] = sin(riemdist(x[,,x_ref], x[,,y_ref], reflect = reflect))
     }
     if (type == "partial") {
-      distances <- c(distances, sqrt(2) * sqrt(abs(1 - cos(riemdist(x[x_ref], x[,,y_ref], reflect = reflect)))))
+      distances[i] <- sqrt(2) * sqrt(abs(1 - cos(riemdist(x[x_ref], x[,,y_ref], reflect = reflect))))
     }
     if (type == "Riemannian") {
-      distances <- c(distances, riemdist(x[x_ref], x[,,y_ref], reflect = reflect))
+      distances[i] <- riemdist(x[x_ref], x[,,y_ref], reflect = reflect)
     }
     if (type == "sizeandshape") {
-      distances <- c(distances, ssriemdist(x[,,x_ref], x[,,y_ref], reflect = reflect))
+      distances[i] <- ssriemdist(x[,,x_ref], x[,,y_ref], reflect = reflect)
     }
 
     names(distances)[i] = paste(x_ref, y_ref, sep = " ")
@@ -27,6 +27,21 @@ shape_proc_distance <- function (x, type = "full", reflect = FALSE){
 
   distances
 }
+
+# FUNCTION TEST
+# -----------------------
+
+bone_shapes = bone_list$x
+
+bone_shapes = cbind(bone_shapes, bone_list$y)
+
+bone_1 = bone_shapes[1:100,]
+bone_2 = bone_shapes[101:200,]
+bone_3 = bone_shapes[201:300,]
+
+bones = array(c(bone_1, bone_2, bone_3), dim = c(100, 2, 3))
+
+shape_proc_distance(bones, type = "full")
 
 # INTERNAL FUNCTIONS
 # -------------------------------------------
@@ -137,4 +152,27 @@ Enorm = function (X){
     n <- sqrt(sum(diag(t(X) %*% X)))
   }
   n
+}
+
+st = function (zstar)
+{
+  st <- t(Conj(zstar))
+  st
+}
+
+defh = function (nrow)
+{
+  k <- nrow
+  h <- matrix(0, k, k + 1)
+  j <- 1
+  while (j <= k) {
+    jj <- 1
+    while (jj <= j) {
+      h[j, jj] <- -1/sqrt(j * (j + 1))
+      jj <- jj + 1
+    }
+    h[j, j + 1] <- j/sqrt(j * (j + 1))
+    j <- j + 1
+  }
+  h
 }
