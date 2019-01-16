@@ -11,7 +11,7 @@
 #'
 #' @return A matrix of all calculated distance. Each distance is labeled by the shapes used for calculation.
 #'
-#' @author Goutham Swaminathan \email{goutham1220@gmail.com} Julia Wrobel \email{jw3134@@cumc.columbia.edu}
+#' @author Goutham Swaminathan \email{goutham1220@gmail.com}
 #'
 #' @export
 #'
@@ -38,18 +38,20 @@ shape_proc_distance <- function (x, type = "full", reflect = FALSE){
 
     x_ref = combn(dim(x)[3], 2)[1,i]
     y_ref = combn(dim(x)[3], 2)[2,i]
+    x_val <- x[,,x_ref]
+    y_val <- x[,,y_ref]
 
     if (type == "full") {
-      distances[i] = sin(riemdist(x[,,x_ref], x[,,y_ref], reflect = reflect))
+      distances[i] = sin(riemdist(x_val, y_val, reflect = reflect))
     }
     if (type == "partial") {
-      distances[i] <- sqrt(2) * sqrt(abs(1 - cos(riemdist(x[x_ref], x[,,y_ref], reflect = reflect))))
+      distances[i] <- sqrt(2) * sqrt(abs(1 - cos(riemdist(x_val, y_val, reflect = reflect))))
     }
     if (type == "Riemannian") {
-      distances[i] <- riemdist(x[x_ref], x[,,y_ref], reflect = reflect)
+      distances[i] <- riemdist(x_val, y_val, reflect = reflect)
     }
     if (type == "sizeandshape") {
-      distances[i] <- ssriemdist(x[,,x_ref], x[,,y_ref], reflect = reflect)
+      distances[i] <- ssriemdist(x_val, y_val, reflect = reflect)
     }
 
     names(distances)[i] = paste(x_ref, y_ref, sep = " ")

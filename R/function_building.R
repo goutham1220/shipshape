@@ -5,13 +5,13 @@ library(shapes)
 # PROCRUSTES DISTANCE FUNCTION DEVELOPMENT
 # -----------------------------------------------------------
 
-bone_shapes = bone_list$x
+bone_shapes <- bone_list$x
 
-bone_shapes = cbind(bone_shapes, bone_list$y)
+bone_shapes <- cbind(bone_shapes, bone_list$y)
 
-bone_1 = bone_shapes[1:100,]
-bone_2 = bone_shapes[101:200,]
-bone_3 = bone_shapes[201:300,]
+bone_1 <- bone_shapes[1:100, ]
+bone_2 <- bone_shapes[101:200, ]
+bone_3 <- bone_shapes[201:300, ]
 
 bones = array(c(bone_1, bone_2, bone_3), dim = c(100, 2, 3))
 
@@ -34,27 +34,29 @@ bones = array(c(bone_1, bone_2, bone_3), dim = c(100, 2, 3))
 
 shape_proc_distance <- function (x, type = "full", reflect = FALSE){
 
-  distances = vector()
+  distances <- vector()
 
   for(i in 1:dim(x)[3]){
 
-    x_ref = combn(dim(x)[3], 2)[1,i]
-    y_ref = combn(dim(x)[3], 2)[2,i]
+    x_ref <- combn(dim(x)[3], 2)[1, i]
+    y_ref <- combn(dim(x)[3], 2)[2, i]
+    x_val <- x[,,x_ref]
+    y_val <- x[,,y_ref]
 
     if (type == "full") {
-      distances = c(distances, sin(riemdist(x[,,x_ref], x[,,y_ref], reflect = reflect)))
+      distances <- c(distances, sin(riemdist(x_val, y_val, reflect = reflect)))
     }
     if (type == "partial") {
-      distances <- c(distances, sqrt(2) * sqrt(abs(1 - cos(riemdist(x[x_ref], x[,,y_ref], reflect = reflect)))))
+      distances <- c(distances, sqrt(2) * sqrt(abs(1 - cos(riemdist(x_val, y_val, reflect = reflect)))))
     }
     if (type == "Riemannian") {
-      distances <- c(distances, riemdist(x[x_ref], x[,,y_ref], reflect = reflect))
+      distances <- c(distances, riemdist(x_val, y_val, reflect = reflect))
     }
     if (type == "sizeandshape") {
-      distances <- c(distances, ssriemdist(x[,,x_ref], x[,,y_ref], reflect = reflect))
+      distances <- c(distances, ssriemdist(x_val, y_val, reflect = reflect))
     }
 
-    names(distances)[i] = paste(x_ref, y_ref, sep = " ")
+    names(distances)[i] <- paste(x_ref, y_ref, sep = " ")
   }
 
   distances
