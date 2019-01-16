@@ -40,9 +40,6 @@ shape_elastic_distance <- function(x, mode = "C"){
 
     fxn = fdasrvf:::inverse_exp_coord(t(f1), t(f2), mode)
 
-    fxn = fdasrvf:::inverse_exp_coord(t(f1), t(f2), "C")
-
-    distances = c(distances, fxn$dist)
     distances[i] = fxn$d
 
     names(distances)[i] = paste(x_ref, y_ref, sep = " ")
@@ -51,6 +48,7 @@ shape_elastic_distance <- function(x, mode = "C"){
   return(distances)
 }
 
+shape_elastic_distance(bones, mode = "C")
 
 
 
