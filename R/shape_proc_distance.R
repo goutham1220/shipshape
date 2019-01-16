@@ -1,4 +1,4 @@
-#' Adapted from "shapes" package by Ian L. Dryden
+#' Adapted from "shapes" package by Ian L. Dryden <ian.dryden@nottingham.ac.uk>
 #' Calculates Procrustes distances for all nC2 combinations of a 3-dimensional array of shapes
 #'
 #' @param x 3-dimensional array of shapes. Every zth element should be a different shape.
@@ -22,7 +22,11 @@
 #' \dontrun{
 #'bone_shapes = bone_list$x
 #'bone_shapes = cbind(bone_shapes, bone_list$y)
-#'shape_proc_distance(bone_shapes, type = "full")
+#'bone_1 = bone_shapes[1:100,]
+#'bone_2 = bone_shapes[101:200,]
+#'bone_3 = bone_shapes[201:300,]
+#'bones = array(c(bone_1, bone_2, bone_3), dim = c(100, 2, 3))
+#'shape_proc_distance(bones, type = "full")
 #' }
 #'
 
