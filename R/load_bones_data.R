@@ -13,7 +13,9 @@
 
 load_bones_data <- function(){
   bones = bone_list
-  return(bones)
+  bone_shapes = cbind(bone_list$x, bone_list$y)
+
+  return(bone_shapes)
 }
 
 

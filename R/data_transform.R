@@ -16,6 +16,5 @@
 #'
 
 data_transform <- function(data){
-
   return(t(data))
 }

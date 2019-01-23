@@ -103,3 +103,9 @@ Enorm = function (X){
   }
   n
 }
+
+function (zstar)
+{
+  st <- t(Conj(zstar))
+  st
+}
