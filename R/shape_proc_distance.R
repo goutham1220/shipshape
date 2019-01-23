@@ -15,7 +15,7 @@
 #'
 #' @export
 #'
-#' @importFrom shapes
+#' @import shapes
 #'
 #' @examples
 #'

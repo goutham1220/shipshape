@@ -12,7 +12,7 @@
 #'
 #' @export
 #'
-#' @importFrom fdasrvf
+#' @import fdasrvf
 #'
 #' @examples
 #'
