@@ -2,7 +2,8 @@
 % Please edit documentation in R/shape_elastic_distance.R
 \name{shape_elastic_distance}
 \alias{shape_elastic_distance}
-\title{Adapted from "fdasrvf" package by  J. Derek Tucker <jdtuck@sandia.gov>}
+\title{Calculates Elastic distances for all nC2 combinations of a 3-dimensional array of shapes
+Adapted from "fdasrvf" package by  J. Derek Tucker <jdtuck@sandia.gov>}
 \usage{
 shape_elastic_distance(x, mode = "C")
 }
@@ -16,6 +17,7 @@ A matrix of all calculated distance. Each distance is labeled by the shapes used
 }
 \description{
 Calculates Elastic distances for all nC2 combinations of a 3-dimensional array of shapes
+Adapted from "fdasrvf" package by  J. Derek Tucker <jdtuck@sandia.gov>
 }
 \examples{
 

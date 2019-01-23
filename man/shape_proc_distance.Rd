@@ -2,8 +2,7 @@
 % Please edit documentation in R/shape_proc_distance.R
 \name{shape_proc_distance}
 \alias{shape_proc_distance}
-\title{Adapted from "shapes" package by Ian L. Dryden <ian.dryden@nottingham.ac.uk>
-Calculates Procrustes distances for all nC2 combinations of a 3-dimensional array of shapes}
+\title{Calculates Procrustes distances for all nC2 combinations of a 3-dimensional array of shapes}
 \usage{
 shape_proc_distance(x, type = "full", reflect = FALSE)
 }
@@ -22,7 +21,6 @@ A matrix of all calculated distance. Each distance is labeled by the shapes used
 }
 \description{
 Adapted from "shapes" package by Ian L. Dryden <ian.dryden@nottingham.ac.uk>
-Calculates Procrustes distances for all nC2 combinations of a 3-dimensional array of shapes
 }
 \examples{
 

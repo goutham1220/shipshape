@@ -1,5 +1,6 @@
-#' Adapted from "shapes" package by Ian L. Dryden <ian.dryden@nottingham.ac.uk>
 #' Calculates Procrustes distances for all nC2 combinations of a 3-dimensional array of shapes
+#'
+#' Adapted from "shapes" package by Ian L. Dryden <ian.dryden@nottingham.ac.uk>
 #'
 #' @param x 3-dimensional array of shapes. Every zth element should be a different shape.
 #'

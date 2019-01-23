@@ -1,6 +1,6 @@
-#' Adapted from "fdasrvf" package by  J. Derek Tucker <jdtuck@sandia.gov>
-#'
 #' Calculates Elastic distances for all nC2 combinations of a 3-dimensional array of shapes
+
+#' Adapted from "fdasrvf" package by  J. Derek Tucker <jdtuck@sandia.gov>
 #'
 #' @param x 3-dimensional array of shapes. Every zth element should be a different shape.
 #'
