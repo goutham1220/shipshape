@@ -23,7 +23,6 @@
 #'bone_2 = bone_shapes[101:200,]
 #'bone_3 = bone_shapes[201:300,]
 #'bones = array(c(bone_1, bone_2, bone_3), dim = c(100, 2, 3))
-#'
 #'shape_elastic_distance(bones, mode = "C")
 #' }
 #'
@@ -47,8 +46,6 @@ shape_elastic_distance <- function(x, mode = "C"){
 
   return(distances)
 }
-
-shape_elastic_distance(bones, mode = "C")
 
 
 

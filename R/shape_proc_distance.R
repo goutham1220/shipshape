@@ -59,8 +59,3 @@ shape_proc_distance <- function (x, type = "full", reflect = FALSE){
 
   distances
 }
-
-shape_proc_distance(bones, type = "full")
-shape_proc_distance(bones, type = "partial")
-shape_proc_distance(bones, type = "Riemannian")
-shape_proc_distance(bones, type = "sizeandshape")
