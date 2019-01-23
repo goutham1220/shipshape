@@ -22,3 +22,5 @@ Each object should occupy a separate page of the array. With this in mind, if yo
 
 The functions will then calculate all nC2 combinations of distances and return the distances, properly labeled, as a vector, like so:
 
+<pre><code> 1 2       1 3       2 3 
+0.1974612 0.3008154 0.3186260</code></pre>
