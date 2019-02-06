@@ -7,7 +7,7 @@
 load_bones_data()
 }
 \value{
-a dataframe of bone shapes (7 bones).
+a sample dataframe of bone shapes (7 bones).
 }
 \description{
 loads test dataframe of bone shapes

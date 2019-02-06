@@ -1,6 +1,6 @@
 #' loads test dataframe of bone shapes
 #'
-#' @return a dataframe of bone shapes (7 bones).
+#' @return a sample dataframe of bone shapes (7 bones).
 #'
 #' @author Goutham Swaminathan \email{goutham1220@gmail.com}
 #'
@@ -12,8 +12,8 @@
 #'
 
 load_bones_data <- function(){
-  bones = bone_list
-  bone_shapes = cbind(bone_list$x, bone_list$y)
+  bones <- load("data/bone_list.RData")
+  bone_shapes <- cbind(bone_list$x, bone_list$y)
 
   return(bone_shapes)
 }
