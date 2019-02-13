@@ -16,7 +16,7 @@
 #'
 #' @export
 #'
-#' @import shapes
+#' @importFrom utils combn getFromNamespace
 #'
 #' @examples
 #'
@@ -33,6 +33,9 @@
 #'
 
 shape_proc_distance <- function (x, type = "full", reflect = FALSE){
+
+  riemdist = getFromNamespace("riemdist", "shapes")
+  ssriemdist = getFromNamespace("ssriemdist", "shapes")
 
   distances = vector()
 

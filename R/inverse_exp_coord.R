@@ -14,8 +14,6 @@
 #'
 #' @export
 #'
-#' @import fdasrvf
-#'
 #' @importFrom utils getFromNamespace
 #'
 
@@ -28,6 +26,10 @@ inverse_exp_coord <- function (beta1, beta2, mode = "O", rotated = T)
   innerprod_q2 = getFromNamespace("innerprod_q2", "fdasrvf")
   project_curve = getFromNamespace("project_curve", "fdasrvf")
   shift_f = getFromNamespace("shift_f", "fdasrvf")
+  repmat = getFromNamespace("repmat", "fdasrvf")
+  curve_to_q = getFromNamespace("curve_to_q", "fdasrvf")
+  invertGamma = getFromNamespace("invertGamma", "fdsrvf")
+  reparam_curve = getFromNamespace("reparam_curve", "fdasrvf")
 
   T1 = ncol(beta1)
   centroid1 = calculatecentroid(beta1)

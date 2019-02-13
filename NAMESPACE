@@ -3,7 +3,5 @@
 export(inverse_exp_coord)
 export(shape_elastic_distance)
 export(shape_proc_distance)
-import(fdasrvf)
-import(shapes)
 importFrom(utils,combn)
 importFrom(utils,getFromNamespace)

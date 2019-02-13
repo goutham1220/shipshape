@@ -7,8 +7,7 @@ Author: c(
     person("Julia", "Wrobel", email = "jw3134@cumc.columbia.edu", role = "ctb"))
 Maintainer: Goutham Swaminathan <goutham1220@gmail.com>
 Description: The goal of this project is to produce a package that allows statisticians to easily and     intuitively calculate Procrustes and Elastic Distance metrics. The package will contain two main distance wrapper functions as well as other functions to assist in converting data for calculation. In addition, the package will include functions to help visualize the distance metrics themselves.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: shapes, fdasrvf
 RoxygenNote: 6.1.0
