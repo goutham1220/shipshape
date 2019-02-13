@@ -28,7 +28,7 @@ inverse_exp_coord <- function (beta1, beta2, mode = "O", rotated = T)
   shift_f = getFromNamespace("shift_f", "fdasrvf")
   repmat = getFromNamespace("repmat", "fdasrvf")
   curve_to_q = getFromNamespace("curve_to_q", "fdasrvf")
-  invertGamma = getFromNamespace("invertGamma", "fdsrvf")
+  invertGamma = getFromNamespace("invertGamma", "fdasrvf")
   reparam_curve = getFromNamespace("reparam_curve", "fdasrvf")
 
   T1 = ncol(beta1)
