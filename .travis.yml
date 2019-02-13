@@ -1,10 +1,5 @@
+# see http://docs.travis-ci.com/user/languages/r/
 language: r
-
-install: 
-- R 
-
-script: 
-- install.packages("devtools", dependencies = TRUE)
-- library("devtools")
-- install()
-- check()
+sudo: required
+# Be strict when checking our package
+warnings_are_errors: true
