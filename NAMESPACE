@@ -2,6 +2,7 @@
 
 export(Enorm)
 export(Enormalize)
+export(centroid.size)
 export(defh)
 export(inverse_exp_coord)
 export(preshape)

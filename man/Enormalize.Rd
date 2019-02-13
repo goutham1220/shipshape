@@ -7,7 +7,7 @@
 Enormalize(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{x}
 }
 \description{
 Enormalize

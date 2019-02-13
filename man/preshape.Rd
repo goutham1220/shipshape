@@ -7,7 +7,7 @@
 preshape(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{x}
 }
 \description{
 preshape

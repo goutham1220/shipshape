@@ -55,7 +55,7 @@ riemdist <- function (x, y, reflect = FALSE){
 
 #' preshape
 #'
-#' @param x
+#' @param x x
 #'
 #' @export
 #'
@@ -99,7 +99,7 @@ preshape = function (x){
 
 #' realtocomplex
 #'
-#' @param x
+#' @param x x
 #'
 #' @export
 #'
@@ -112,7 +112,7 @@ realtocomplex = function (x){
 
 #' Enormalize
 #'
-#' @param x
+#' @param x x
 #'
 #' @export
 #'
@@ -123,7 +123,7 @@ Enormalize = function (x){
 
 #' Enorm
 #'
-#' @param x
+#' @param X X
 #'
 #' @export
 #'
@@ -140,7 +140,7 @@ Enorm = function (X){
 
 #' st
 #'
-#' @param zstar
+#' @param zstar zstar
 #'
 #' @export
 #'
@@ -153,7 +153,7 @@ st = function (zstar)
 
 #' defh
 #'
-#' @param nrow
+#' @param nrow nrow
 #'
 #' @export
 #'
@@ -173,4 +173,46 @@ defh = function (nrow)
     j <- j + 1
   }
   h
+}
+
+#' centroid.size
+#'
+#' @param x x
+#'
+#' @export
+#'
+
+centroid.size = function (x)
+{
+  if ((is.vector(x) == FALSE) && is.complex(x)) {
+    k <- nrow(x)
+    n <- ncol(x)
+    tem <- array(0, c(k, 2, n))
+    tem[, 1, ] <- Re(x)
+    tem[, 2, ] <- Im(x)
+    x <- tem
+  }
+  {
+    if (length(dim(x)) == 3) {
+      n <- dim(x)[3]
+      sz <- rep(0, times = n)
+      k <- dim(x)[1]
+      h <- defh(k - 1)
+      for (i in 1:n) {
+        xh <- h %*% x[, , i]
+        sz[i] <- sqrt(sum(diag(t(xh) %*% xh)))
+      }
+      sz
+    }
+    else {
+      if (is.vector(x) && is.complex(x)) {
+        x <- cbind(Re(x), Im(x))
+      }
+      k <- nrow(x)
+      h <- defh(k - 1)
+      xh <- h %*% x
+      size <- sqrt(sum(diag(t(xh) %*% xh)))
+      size
+    }
+  }
 }

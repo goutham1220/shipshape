@@ -7,7 +7,7 @@
 Enorm(X)
 }
 \arguments{
-\item{x}{}
+\item{X}{X}
 }
 \description{
 Enorm

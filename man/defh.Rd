@@ -7,7 +7,7 @@
 defh(nrow)
 }
 \arguments{
-\item{nrow}{}
+\item{nrow}{nrow}
 }
 \description{
 defh

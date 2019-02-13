@@ -7,7 +7,7 @@
 realtocomplex(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{x}
 }
 \description{
 realtocomplex
