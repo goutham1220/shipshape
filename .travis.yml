@@ -4,7 +4,7 @@ install:
 - R 
 
 script: 
--install.packages("devtools", dependencies = TRUE)
--library("devtools")
--install()
--check()
+- install.packages("devtools", dependencies = TRUE)
+- library("devtools")
+- install()
+- check()
