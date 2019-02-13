@@ -2,3 +2,9 @@ language: r
 
 install: 
 - R 
+
+script: 
+-install.packages("devtools", dependencies = TRUE)
+-library("devtools")
+-install()
+-check()
