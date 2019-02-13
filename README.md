@@ -1,5 +1,9 @@
 # `shipshape`
 
+[![](https://travis-ci.org/goutham1220/shipshape.svg?branch=master)](https://travis-ci.org/goutham1220/shipshape)
+
+[![](https://cranlogs.r-pkg.org/badges/grand-total/shipshape)](https://cranlogs.r-pkg.org/badges/grand-total/shipshape)
+
 ## Intuitive way to conduct shape analysis.
 
 The package consists of two main functions: `shape_proc_distance` for calculating Procrustes distance metrics, and `shape_elastic_distance` for calculating Elastic distance metrics.
