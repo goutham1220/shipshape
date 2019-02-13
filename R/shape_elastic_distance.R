@@ -12,7 +12,7 @@
 #'
 #' @export
 #'
-#' @import fdasrvf
+#' @importFrom utils combn
 #'
 #' @examples
 #'
@@ -38,7 +38,7 @@ shape_elastic_distance <- function(x, mode = "C"){
     f1 = x[,,x_ref]
     f2 = x[,,y_ref]
 
-    fxn = fdasrvf:::inverse_exp_coord(t(f1), t(f2), mode)
+    fxn = inverse_exp_coord(t(f1), t(f2), mode)
 
     distances[i] = fxn$d
 
