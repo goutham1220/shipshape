@@ -2,6 +2,8 @@
 
 [![](https://travis-ci.org/goutham1220/shipshape.svg?branch=master)](https://travis-ci.org/goutham1220/shipshape)
 
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/GITHUB_USERNAME/REPO?branch=master&svg=true)](https://ci.appveyor.com/project/GITHUB_USERNAME/REPO)
+
 [![](https://cranlogs.r-pkg.org/badges/grand-total/shipshape)](https://cranlogs.r-pkg.org/badges/grand-total/shipshape)
 
 ## Intuitive way to conduct shape analysis.
