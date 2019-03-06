@@ -2,7 +2,7 @@
 
 [![](https://travis-ci.org/goutham1220/shipshape.svg?branch=master)](https://travis-ci.org/goutham1220/shipshape)
 
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/GITHUB_USERNAME/REPO?branch=master&svg=true)](https://ci.appveyor.com/project/GITHUB_USERNAME/REPO)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/goutham1220/shipshape?branch=master&svg=true)](https://ci.appveyor.com/project/goutham1220/shipshape)
 
 [![](https://cranlogs.r-pkg.org/badges/grand-total/shipshape)](https://cranlogs.r-pkg.org/badges/grand-total/shipshape)
 
