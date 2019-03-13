@@ -18,7 +18,7 @@ Transforms data into usable format.
 \examples{
 
 \dontrun{
-test_data = load_bones_data()
+test_data = bone_list
 test_data = t(test_data)
 transform_data(test_data)
 }
