@@ -1,6 +1,6 @@
 #' split a matrix into desired 3-D array at set interval.
 #'
-#'@param matrix input matrix
+#'@param mat input matrix
 #'@param interval interval for splitting of matrix
 #'
 #' @return 3-D array

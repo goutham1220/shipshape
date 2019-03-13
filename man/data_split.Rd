@@ -7,9 +7,9 @@
 data_split(mat, interval)
 }
 \arguments{
-\item{interval}{interval for splitting of matrix}
+\item{mat}{input matrix}
 
-\item{matrix}{input matrix}
+\item{interval}{interval for splitting of matrix}
 }
 \value{
 3-D array

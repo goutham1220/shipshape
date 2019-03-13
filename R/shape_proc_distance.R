@@ -35,10 +35,12 @@ shape_proc_distance <- function (x, type = "full", reflect = FALSE){
 
   distances = vector()
 
-  for(i in 1:dim(x)[3]){
+  comb_x = combn(dim(x)[3], 2)
 
-    x_ref = combn(dim(x)[3], 2)[1,i]
-    y_ref = combn(dim(x)[3], 2)[2,i]
+  for(i in 1:ncol(comb_x)){
+
+    x_ref = comb_x[1,i]
+    y_ref = comb_x[2,i]
     x_val <- x[,,x_ref]
     y_val <- x[,,y_ref]
 
