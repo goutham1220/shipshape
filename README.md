@@ -15,14 +15,39 @@ The package consists of two main functions: `shape_proc_distance` for calculatin
 ### Installation
 
 To install the latest version directly from Github, please use:
-<pre><code>
-devtools::install_github("goutham1220/shipshape")
-</code></pre>
+<pre><code>devtools::install_github("goutham1220/shipshape")</code></pre>
 
 ### Usage
 
 In order to use the `shape_proc_distance` and `shape_elastic_distance` functions, your data should be contained in a 3-dimensional array. 
-Each object should occupy a separate page of the array. With this in mind, if your data was contained in a 3D array `arr`, the functions can be called like this:
+Each object should occupy a separate page of the array, like so: 
+
+<pre><code>, , 1
+
+     [,1] [,2]
+[1,]    1   13
+[2,]    2   14
+[3,]    3   15
+
+, , 2
+
+     [,1] [,2]
+[1,]    4   16
+[2,]    5   17
+[3,]    6   18
+
+, , 3
+
+     [,1] [,2]
+[1,]    7   19
+[2,]    8   20
+[3,]    9   21
+</code></pre>
+
+If your data is not formatted like this, use the `data_split` function to automatically convert your data into a 3D array like so:
+
+<pre><code>data_split(test_data, 100)</code></pre>
+With this in mind, if your data was contained in a 3D array `arr`, the functions can be called like this:
 <pre><code>shape_proc_distance(arr, type = "full")</code></pre>
 <pre><code>shape_elastic_distance(arr, mode = "C")</code></pre>
 
