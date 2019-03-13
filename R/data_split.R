@@ -7,18 +7,18 @@
 #'
 #' @author Goutham Swaminathan \email{goutham1220@gmail.com}
 #'
+#' @export
+#'
 #' @examples
 #'
 #' \dontrun{
-#' test_data = bone_list
+#' test_data = bone_list$x
+#' test_data = cbind(test_data, bone_list$y)
 #' bones = data_split(test_data, 100)
 #' }
 #'
 
-data_split <- function(matrix, interval){
-
-  mat = matrix(data = 1:24, nrow = 12, ncol = 2)
-  interval = 3
+data_split <- function(mat, interval){
 
   z = nrow(mat)/interval
 
@@ -37,3 +37,4 @@ data_split <- function(matrix, interval){
   return(arr)
 
 }
+
