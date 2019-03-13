@@ -53,6 +53,23 @@ riemdist <- function (x, y, reflect = FALSE){
   riem
 }
 
+#' ssriemdist
+#'
+#' @param x x
+#' @param y y
+#' @param reflect reflect
+#'
+#' @export
+#'
+
+ssriemdist <- function (x, y, reflect = FALSE)
+{
+  sx <- centroid.size(x)
+  sy <- centroid.size(y)
+  sd <- sx^2 + sy^2 - 2 * sx * sy * cos(riemdist(x, y, reflect = reflect))
+  sqrt(abs(sd))
+}
+
 #' preshape
 #'
 #' @param x x

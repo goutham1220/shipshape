@@ -12,8 +12,6 @@
 #'
 #' @export
 #'
-#'@import fdasrvf
-#'
 #' @importFrom utils combn
 #'
 #' @examples

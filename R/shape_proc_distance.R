@@ -16,7 +16,7 @@
 #'
 #' @export
 #'
-#' @importFrom utils combn getFromNamespace
+#' @importFrom utils combn
 #'
 #' @examples
 #'

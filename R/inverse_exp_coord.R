@@ -12,6 +12,8 @@
 #'
 #' @param rotated account for rotation
 #'
+#' @import fdasrvf
+#'
 #' @export
 #'
 #' @importFrom utils getFromNamespace
