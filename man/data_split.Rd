@@ -4,12 +4,12 @@
 \alias{data_split}
 \title{split a matrix into desired 3-D array at set interval.}
 \usage{
-data_split(matrix, interval)
+data_split(mat, interval)
 }
 \arguments{
-\item{matrix}{input matrix}
-
 \item{interval}{interval for splitting of matrix}
+
+\item{matrix}{input matrix}
 }
 \value{
 3-D array
@@ -20,7 +20,8 @@ split a matrix into desired 3-D array at set interval.
 \examples{
 
 \dontrun{
-test_data = bone_list
+test_data = bone_list$x
+test_data = cbind(test_data, bone_list$y)
 bones = data_split(test_data, 100)
 }
 
