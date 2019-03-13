@@ -15,7 +15,7 @@ The package consists of two main functions: `shape_proc_distance` for calculatin
 ### Installation
 
 To install the latest version directly from Github, please use:
-<pre><code>install.packages("devtools")
+<pre><code>
 devtools::install_github("goutham1220/shipshape")
 </code></pre>
 

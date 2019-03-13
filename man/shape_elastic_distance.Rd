@@ -22,7 +22,6 @@ Adapted from "fdasrvf" package by  J. Derek Tucker <jdtuck@sandia.gov>
 \examples{
 
 \dontrun{
-bone_shapes = load_bones_data()
 bone_shapes = bones_shapes$x
 bone_shapes = cbind(bone_shapes, bone_list$y)
 bone_1 = bone_shapes[1:100,]
